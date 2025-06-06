@@ -19,7 +19,8 @@ A jornada da humanidade para sobreviver.
 Cenário de Crise: A Terra em Agonia
 Imaginem um futuro não muito distante. A Terra, nosso lar, clama por socorro. Décadas de exploração desenfreada dos recursos naturais, somadas à poluição implacável, levaram nosso planeta a um ponto de desequilíbrio irreversível. A humanidade, desesperada, olha para as estrelas em busca de uma segunda chance, um novo lar antes que seja tarde demais.
 
-![Terra em Agonia](assets/screenshots/ChatGPT_Image_6_de_jun. de 2025, 01_51_55.png)
+![Terra em Agonia] ![image](https://github.com/user-attachments/assets/f8dde04e-b21e-40e3-a12e-438ab4536f56)
+
 
 A Centelha de Esperança: Projeto Lázaro Prime e os Mundos Desiludidores
 Foi nesse cenário de urgência que nasceu o 'Projeto Lázaro Prime'. Um programa audacioso que enviou sondas não tripuladas através do recém-descoberto Portal Estelar perto de Saturno. Por décadas, a comunicação foi esporádica e os dados, muitas vezes, desanimadores. Planetas como o 'Planeta Miller', com sua órbita traiçoeira e dilatação temporal extrema, e o 'Planeta Mann', um mundo gelado e inóspito, enviaram relatórios que, embora cientificamente valiosos, não ofereciam esperança de colonização imediata.
