@@ -65,7 +65,7 @@ Instalação
 Clone o repositório:
 
 git clone https://github.com/yagojardimm/Estrutura-de-Dados.git
-cd SEU_REPOSITORIO
+cd Estrutura-de-Dados
 
 
 Crie e ative um ambiente virtual (opcional, mas recomendado):
