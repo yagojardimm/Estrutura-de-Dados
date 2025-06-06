@@ -180,11 +180,11 @@ Este projeto foi desenvolvido com a paixão pela exploração espacial e a resol
 
 Desenvolvedores:
 
-Matheus
+Matheus Beiruth
 
-Yago
+Yago da Costa
 
-Caio
+Caio Cezar Jotta
 
-João
+João Pedro Portela
 
