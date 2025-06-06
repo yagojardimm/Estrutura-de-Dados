@@ -64,10 +64,9 @@ matplotlib
 Instalação
 Clone o repositório:
 
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/yagojardimm/Estrutura-de-Dados.git
 cd SEU_REPOSITORIO
 
-(Lembre-se de substituir SEU_USUARIO e SEU_REPOSITORIO pelo seu usuário e nome do repositório no GitHub.)
 
 Crie e ative um ambiente virtual (opcional, mas recomendado):
 
