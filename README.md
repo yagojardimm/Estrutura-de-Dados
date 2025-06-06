@@ -13,7 +13,9 @@ Inspirado no universo de "Interstellar", este projeto Python modela o sistema so
 
 Este projeto simula a complexidade do planejamento de rotas interestelares, priorizando a otimização temporal crítica para a sobrevivência da humanidade.
 
-## A "Missão Garrido" é uma corrida contra o tempo para encontrar um novo lar para a humanidade, já que a Terra está em colapso devido à exploração e poluição. Após o fracasso de várias sondas do "Projeto Lázaro Prime" em encontrar planetas habitáveis, a sonda Lázaro-12 enviou um sinal promissor do "Planeta Edmunds", acendendo uma nova esperança.
+## 📖 O Storytelling da Missão Garrido
+
+A "Missão Garrido" é uma corrida contra o tempo para encontrar um novo lar para a humanidade, já que a Terra está em colapso devido à exploração e poluição. Após o fracasso de várias sondas do "Projeto Lázaro Prime" em encontrar planetas habitáveis, a sonda Lázaro-12 enviou um sinal promissor do "Planeta Edmunds", acendendo uma nova esperança.
 
 O desafio é encontrar a rota mais eficiente para Edmunds, otimizando o tempo terrestre (impactado pela dilatação temporal) para que a missão seja concluída em menos de 200 anos terrestres. A solução encontrada envolve o uso do "Algoritmo de Dijkstra", que modela o sistema estelar como um grafo, onde planetas são nós e rotas são arestas com pesos baseados nos tempos de nave e terrestre.
 
