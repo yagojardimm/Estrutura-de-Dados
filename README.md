@@ -2,7 +2,7 @@
 
 # Curso: Engenharia de Software 
 # Disciplina: Estrutura de Dados Avançados
-# <a href='https://github.com/marciogarridoLaCop'>
+# href='https://github.com/marciogarridoLaCop'
 # Período: 4° Período
   
 # 🚀 Simulador de Rotas Interestelares - Missão Garrido
