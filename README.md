@@ -84,7 +84,8 @@ pip install -r requirements.txt
 Para uma experiência visual completa da narrativa e funcionalidades do projeto, explore as telas da nossa aplicação web:
 
 ### Tela Inicial (Home)
-![image](https://github.com/user-attachments/assets/7a75ca1b-ef7a-4f2d-8b16-d9e2abd9dd63)
+![image](https://github.com/user-attachments/assets/6f890a1c-6ec5-4aaf-b10f-44d7b603a156)
+
 
 
 ### O Desafio (Problema)
