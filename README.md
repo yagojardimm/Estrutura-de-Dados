@@ -48,3 +48,143 @@ Arestas (Edges): Representam as rotas entre esses pontos, com pesos (custos) ass
 Algoritmo de Dijkstra: Um algoritmo clássico de busca de caminho mais curto em grafos ponderados, utilizado aqui para encontrar a rota que minimiza o tempo total na Terra.
 
 Matplotlib: Biblioteca de visualização em Python, usada para criar o mapa estelar e animar a rota da nave.**
+
+
+## ⚙️ Requisitos
+Para rodar este projeto, você precisará de:
+
+Python 3.7+
+
+As seguintes bibliotecas Python:
+
+networkx
+
+matplotlib
+
+Instalação
+Clone o repositório:
+
+git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+cd SEU_REPOSITORIO
+
+(Lembre-se de substituir SEU_USUARIO e SEU_REPOSITORIO pelo seu usuário e nome do repositório no GitHub.)
+
+Crie e ative um ambiente virtual (opcional, mas recomendado):
+
+python -m venv venv
+# No Windows:
+.\venv\Scripts\activate
+# No macOS/Linux:
+source venv/bin/activate
+
+Instale as dependências:
+
+pip install -r requirements.txt
+
+## 🚀 Como Usar
+Para executar a simulação da Missão Garrido:
+
+Certifique-se de que todas as dependências estão instaladas (veja a seção Instalação).
+
+Execute o script main.py a partir da raiz do projeto:
+
+python src/main.py
+
+O script irá:
+
+Inicializar o grafo do sistema interestelar.
+
+Calcular a rota mais otimizada em tempo terrestre da Terra para o Planeta Edmunds.
+
+Exibir no console os resultados da simulação: a rota encontrada, o tempo total de nave, o tempo total na Terra e se a restrição de 200 anos foi atendida.
+
+Gerar uma visualização interativa do grafo com a rota animada usando matplotlib.
+
+Exemplo de Saída no Console:
+🚀 Iniciando simulação da Missão Garrido (cenário Interestelar)...
+    Objetivo: Encontrar a rota MAIS RÁPIDA EM TEMPO TERRESTRE de 'Terra' para 'Planeta Edmunds',
+              e verificar se respeita o limite de 200.0 anos terrestres.
+              Tripulação: Matheus, Yago, Caio, João.
+----------------------------------------------------------------------
+
+✨ ROTA MAIS RÁPIDA EM TEMPO TERRESTRE (via Dijkstra) ENCONTRADA! ✨
+
+    ➡️ Sequência de Locais Sugerida:
+        Terra -> Saturno (BM) -> Sist. Gargantua -> Mann (Órbita) -> Gargantua (Manobra) -> Planeta Edmunds
+
+    ⏳ Tempo Total Estimado de Nave (Tripulação) para esta rota: 2.860 anos.
+    🌍 Tempo Total Estimado Decorrido na Terra para esta rota: 7.000 anos.
+    ✅ RESTRIÇÃO DE TEMPO TERRESTRE ATENDIDA (<= 200.0 anos).
+----------------------------------------------------------------------
+
+ℹ️ INFORMAÇÕES SOBRE OS LOCAIS NA ROTA (Cenário Interestelar):
+
+    📍 Local: Terra
+        Info: Ponto de partida da Missão Garrido.
+        Fator de Dilatação da Região (aprox.): 1x
+----------------------------------------
+    📍 Local: Saturno (BM)
+        Info: Buraco de Minhoca para sistema Gargantua.
+        Fator de Dilatação da Região (aprox.): 1x
+----------------------------------------
+    📍 Local: Sist. Gargantua
+        Info: Entrada do sistema de Gargantua.
+        Fator de Dilatação da Região (aprox.): 10x
+----------------------------------------
+    📍 Local: Mann (Órbita)
+        Info: Planeta Mann: possível ponto de passagem.
+        Fator de Dilatação da Região (aprox.): 5x
+----------------------------------------
+    📍 Local: Gargantua (Manobra)
+        Info: Manobra de slingshot em Gargantua.
+        Fator de Dilatação da Região (aprox.): 75000x
+----------------------------------------
+    📍 Local: Planeta Edmunds
+        Info: Planeta Edmunds: destino principal da Missão Garrido.
+        Fator de Dilatação da Região (aprox.): 2x
+----------------------------------------
+
+🛤️ DETALHES DOS TRECHOS DA ROTA OTIMIZADA (Cenário Interestelar):
+
+    ➡️ Trecho: De 'Terra' para 'Saturno (BM)':
+        ⏳ Tempo de Nave: 2.0000 anos (2.0a)
+        🌍 Tempo na Terra (para este trecho): 2.00 anos
+----------------------------------------
+    ➡️ Trecho: De 'Saturno (BM)' para 'Sist. Gargantua':
+        ⏳ Tempo de Nave: 0.0100 anos (0.01a)
+        🌍 Tempo na Terra (para este trecho): 0.10 anos
+----------------------------------------
+    ➡️ Trecho: De 'Sist. Gargantua' para 'Mann (Órbita)':
+        ⏳ Tempo de Nave: 0.3000 anos (0.3a)
+        🌍 Tempo na Terra (para este trecho): 1.50 anos
+----------------------------------------
+    ➡️ Trecho: De 'Mann (Órbita)' para 'Gargantua (Manobra)':
+        ⏳ Tempo de Nave: 0.0500 anos (0.05a)
+        🌍 Tempo na Terra (para este trecho): 3750.00 anos
+----------------------------------------
+    ➡️ Trecho: De 'Gargantua (Manobra)' para 'Planeta Edmunds':
+        ⏳ Tempo de Nave: 0.5000 anos (0.5a)
+        🌍 Tempo na Terra (para este trecho): 750.00 anos
+----------------------------------------
+======================================================================
+
+🌌 Gerando visualização do mapa estelar...
+
+✅ Simulação Concluída.
+
+## 📄 Licença
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+## 👨‍💻 Equipe e Agradecimentos
+Este projeto foi desenvolvido com a paixão pela exploração espacial e a resolução de problemas complexos.
+
+Desenvolvedores:
+
+Matheus
+
+Yago
+
+Caio
+
+João
+
