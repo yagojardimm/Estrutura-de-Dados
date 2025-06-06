@@ -88,12 +88,12 @@ Para uma experiência visual completa da narrativa e funcionalidades do projeto,
 
 
 ### O Desafio (Problema)
-[image](https://github.com/user-attachments/assets/ef03c3d0-9b88-4f2e-9468-c0c9ef5db4af)
+![image](https://github.com/user-attachments/assets/ef03c3d0-9b88-4f2e-9468-c0c9ef5db4af)
 
 
 
 ### Storytelling da Missão
-[image](https://github.com/user-attachments/assets/21236f8c-3c5a-4d55-9476-86a4b3c263d4)
+![image](https://github.com/user-attachments/assets/21236f8c-3c5a-4d55-9476-86a4b3c263d4)
 
 
 
