@@ -34,6 +34,14 @@ A nave parte da Terra e precisa chegar ao Planeta Edmunds dentro de uma **restri
 - `calcular_tempos_caminho_final()`: soma o tempo da nave e da Terra para um caminho específico.
 - `encontrar_rota_dijkstra_otimizando_terra()`: encontra a melhor rota respeitando o tempo máximo.
 - `visualizar_cenario_interestelar()`: plota o grafo e anima o trajeto da nave.
+## 📦 Requisitos
+Python 3.7+
+
+networkx
+
+matplotlib
+instalar as dependências com: pip install -r requirements.txt
+
 
 ## 🧪 Exemplo de Uso
 
