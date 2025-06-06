@@ -84,21 +84,21 @@ pip install -r requirements.txt
 Para uma experiência visual completa da narrativa e funcionalidades do projeto, explore as telas da nossa aplicação web:
 
 ### Tela Inicial (Home)
-![Tela Inicial do Projeto Nemesis Protocol]![image](https://github.com/user-attachments/assets/7a75ca1b-ef7a-4f2d-8b16-d9e2abd9dd63)
+![image](https://github.com/user-attachments/assets/7a75ca1b-ef7a-4f2d-8b16-d9e2abd9dd63)
 
 
 ### O Desafio (Problema)
-![Tela O Desafio do Projeto Nemesis Protocol]![image](https://github.com/user-attachments/assets/ef03c3d0-9b88-4f2e-9468-c0c9ef5db4af)
+[image](https://github.com/user-attachments/assets/ef03c3d0-9b88-4f2e-9468-c0c9ef5db4af)
 
 
 
 ### Storytelling da Missão
-![Tela Storytelling da Missão Garrido]![image](https://github.com/user-attachments/assets/21236f8c-3c5a-4d55-9476-86a4b3c263d4)
+[image](https://github.com/user-attachments/assets/21236f8c-3c5a-4d55-9476-86a4b3c263d4)
 
 
 
 ### A Equipe (Scrum)
-![Tela A Equipe do Projeto Nemesis Protocol]![image](https://github.com/user-attachments/assets/e7deb879-690e-4529-9bb0-e6ab7e784e6e)
+![image](https://github.com/user-attachments/assets/e7deb879-690e-4529-9bb0-e6ab7e784e6e)
 
 
 
