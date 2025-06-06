@@ -5,7 +5,7 @@
 # <a href='https://github.com/marciogarridoLaCop'>Professor: Marcio Alexandre Dias Garrido</a>
 # Período: 4° Período
   
-🌌 Simulador de Rotas Interestelares: Missão Garrido (Nemesis Protocol)
+## 🌌 Simulador de Rotas Interestelares: Missão Garrido (Nemesis Protocol)
 🚀 Visão Geral do Projeto
 A humanidade está à beira do colapso. A Terra, sufocada por décadas de exploração e poluição, busca uma segunda chance entre as estrelas. O Simulador de Rotas Interestelares: Missão Garrido é a ferramenta vital para essa esperança.
 
@@ -13,7 +13,7 @@ Inspirado no universo de "Interstellar", este projeto Python modela o sistema so
 
 Este projeto simula a complexidade do planejamento de rotas interestelares, priorizando a otimização temporal crítica para a sobrevivência da humanidade.
 
-📖 O Storytelling da Missão Garrido
+## 📖 O Storytelling da Missão Garrido
 A jornada da humanidade para sobreviver.
 
 Cenário de Crise: A Terra em Agonia
@@ -49,7 +49,7 @@ A Missão Garrido é mais do que uma jornada espacial; é um símbolo da resili�
 
 ![Novo Horizonte: Planeta e Esperança](assets/screenshots/ChatGPT_Image_6_de_jun. de 2025, 02_23_42.png)
 
-✨ Funcionalidades
+## ✨ Funcionalidades
 Modelagem de Grafo Interstelar: Representação dos planetas e pontos de interesse como nós e rotas como arestas em um grafo.
 
 Cálculo de Tempo Duplo: Consideração do tempo de navegação (para a tripulação) e o tempo decorrido na Terra (afetado pela dilatação temporal) em cada trecho da rota.
@@ -64,7 +64,7 @@ Animação da Rota Otimizada: Animação do caminho encontrado pelo algoritmo de
 
 Verificação de Restrição Temporal: Validação se a rota otimizada se encaixa dentro de um limite máximo de tempo terrestre permitido para a missão.
 
-💡 Conceitos Utilizados
+## 💡 Conceitos Utilizados
 Teoria da Relatividade (Dilatação Temporal): O tempo passa mais devagar em regiões com alta gravidade. Este conceito é fundamental para calcular o "tempo na Terra" em contraste com o "tempo de nave".
 
 Teoria dos Grafos com NetworkX: O sistema interestelar é modelado como um grafo (rede) onde:
