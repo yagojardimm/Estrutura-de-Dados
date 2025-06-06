@@ -85,22 +85,22 @@ Para uma experiência visual completa da narrativa e funcionalidades do projeto,
 
 ### Tela Inicial (Home)
 ![Tela Inicial do Projeto Nemesis Protocol]![image](https://github.com/user-attachments/assets/7a75ca1b-ef7a-4f2d-8b16-d9e2abd9dd63)
-*(Breve descrição da tela, como ela serve de porta de entrada para a missão.)*
+
 
 ### O Desafio (Problema)
 ![Tela O Desafio do Projeto Nemesis Protocol]![image](https://github.com/user-attachments/assets/ef03c3d0-9b88-4f2e-9468-c0c9ef5db4af)
 
-*(Explique o que esta tela apresenta sobre o problema a ser resolvido.)*
+
 
 ### Storytelling da Missão
 ![Tela Storytelling da Missão Garrido]![image](https://github.com/user-attachments/assets/21236f8c-3c5a-4d55-9476-86a4b3c263d4)
 
-*(Mostre a beleza e imersão da sua página de storytelling.)*
+
 
 ### A Equipe (Scrum)
 ![Tela A Equipe do Projeto Nemesis Protocol]![image](https://github.com/user-attachments/assets/e7deb879-690e-4529-9bb0-e6ab7e784e6e)
 
-*(Destaque a organização e os membros da equipe.)*
+
 
 ---
 ## 🚀 Como Usar
