@@ -99,7 +99,8 @@ Para uma experiência visual completa da narrativa e funcionalidades do projeto,
 
 
 ### A Equipe (Scrum)
-![image](https://github.com/user-attachments/assets/e7deb879-690e-4529-9bb0-e6ab7e784e6e)
+![image](https://github.com/user-attachments/assets/2075258f-eb8c-443e-be20-fb3a4ef621cb)
+
 
 
 
