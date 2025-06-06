@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Board - Nemesis Protocol: Missão Garrido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --color-primary-purple: #8B5CF6;
+            --color-primary-purple-hover: #7C3AED;
+            --color-background-board-base: #0d0d1f;
+            --color-background-column: #161629;
+            --color-card-background: #2a2a40;
+            --color-card-border: rgba(139, 92, 246, 0.4);
+            --color-text-main: #E5E7EB;
+            --color-text-header: #FFFFFF;
+            --color-text-card: #D1D5DB;
+            --color-sprint-1: #2DD4BF;
+            --color-sprint-2: #FBBF24;
+            --color-sprint-3: #F472B6;
+        }
+
+        
+        html {
+            background-color: var(--color-background-board-base);
+        }
+
+        body {
+            background-color: transparent;
+            color: var(--color-text-main);
+            font-family: 'Exo 2', sans-serif;
+            padding: 0; 
+            min-height: 100vh; 
+            position: relative;
+            display: flex; 
+            flex-direction: column; 
+            
+        }
+
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            background-image: url(papel-de-parede-abstrato-ultra-detalhado-da-nebulosa-4.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            opacity: 0.5; 
+            z-index: -2; 
+            pointer-events: none; 
+        }
+
+        
+        .board-title-container {
+            text-align: center;
+            margin-bottom: 0;
+            padding: 15px 20px;
+            background-color: rgba(22, 22, 41, 0.7); 
+            border-radius: 0 0 12px 12px; 
+            border: 1px solid var(--color-primary-purple);
+            border-top: none; 
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+        }
+        .board-logo {
+            width: 150px;
+            height: auto;
+            background-color: var(--color-primary-purple);
+            color: var(--color-text-header);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            border-radius: 4px;
+            margin: 0 auto 15px auto;
+            font-size: 1.1rem;
+            padding: 5px;
+        }
+        .board-main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-text-header);
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.5); 
+        }
+        .board-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-card); 
+            margin-top: 5px;
+        }
+
+       
+        .scrum-board {
+            display: flex; 
+            gap: 20px; 
+            overflow-x: scroll; 
+            overflow-y: scroll; 
+            padding: 20px;
+            flex-grow: 1; 
+            position: relative;
+            z-index: 1;
+            align-items: flex-start; 
+        }
+
+        
+        .scrum-column {
+            background-color: var(--color-background-column);
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 300px; 
+            width: 23%; 
+            flex-shrink: 0; 
+            border-top: 5px solid var(--color-primary-purple); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background-color: rgba(22, 22, 41, 0.9); 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        
+        .completed-tasks-container {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            padding-right: 5px; 
+            flex-grow: 1; 
+        }
+
+        
+        .completed-tasks-container .task-card {
+            width: calc(50% - 5px); 
+            min-width: 150px; 
+            box-sizing: border-box; 
+            margin-bottom: 0; 
+        }
+
+        
+        @media (max-width: 768px) {
+            .completed-tasks-container .task-card {
+                width: 100%; 
+            }
+        }
+
+        
+        .column-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-primary-purple);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-primary-purple);
+            text-align: center;
+        }
+
+        
+        .task-card {
+            background-color: var(--color-card-background);
+            background-color: rgba(42, 42, 64, 0.95); 
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px; 
+            border: 1px solid var(--color-card-border);
+            transition: box-shadow 0.2s ease-in-out; 
+        }
+        .task-card:hover {
+            box-shadow: 0 0 15px var(--color-card-border); 
+        }
+
+        .task-title {
+            font-weight: 600;
+            color: var(--color-text-main);
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .task-description {
+            font-size: 0.875rem;
+            color: var(--color-text-card);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .task-details {
+            font-size: 0.8rem;
+            color: var(--color-text-subtle);
+        }
+        .task-assignee {
+            display: inline-block;
+            background-color: var(--color-primary-purple);
+            color: var(--color-text-header);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        .task-sprint-tag {
+            display: inline-block;
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-top: 8px;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+        /* Cores para as tags de sprint */
+        .sprint-1 { background-color: var(--color-sprint-1); }
+        .sprint-2 { background-color: var(--color-sprint-2); }
+        .sprint-3 { background-color: var(--color-sprint-3); }
+        .sprint-epic { background-color: #60A5FA; color: #FFF; } 
+        .sprint-us { background-color: #A78BFA; color: #FFF; } 
+
+
+        
+        .scrum-board::-webkit-scrollbar,
+        .completed-tasks-container::-webkit-scrollbar {
+            height: 12px; 
+            width: 12px; 
+        }
+        .scrum-board::-webkit-scrollbar-track,
+        .completed-tasks-container::-webkit-scrollbar-track {
+            background: #111827;
+            border-radius: 10px;
+        }
+        .scrum-board::-webkit-scrollbar-thumb,
+        .completed-tasks-container::-webkit-scrollbar-thumb {
+            background-color: var(--color-primary-purple);
+            border-radius: 10px;
+            border: 3px solid #111827;
+        }
+    </style>
+</head>
+<body>
+    <div class="board-title-container">
+        <div class="board-logo">NEMESIS</div>
+        <h1 class="board-main-title">Scrum Board: Missão Garrido</h1>
+        <p class="board-subtitle">Acompanhamento Ágil do Projeto Interestelar</p>
+    </div>
+
+    <div class="scrum-board">
+
+        
+        <div class="scrum-column">
+            <h2 class="column-title">Product Backlog</h2>
+
+            <div class="task-card">
+                <h3 class="task-title">ÉPICO: Definição do Cenário Missão Garrido</h3>
+                <p class="task-description">Criar um cenário fictício realista, coerente e desafiador para a aplicação do Algoritmo de Dijkstra, incluindo os desafios da exploração espacial e dilatação temporal.</p>
+                <p class="task-details">Prioridade: Alta</p>
+            </div>
+            <div class="task-card">
+                <h3 class="task-title">ÉPICO: Implementação do Algoritmo de Dijkstra</h3>
+                <p class="task-description">Desenvolver a solução em Python para encontrar o caminho mais eficiente, tratando os dados do grafo (planetas, rotas, pesos, fatores de dilatação).</p>
+                <p class="task-details">Prioridade: Alta</p>
+            </div>
+            <div class="task-card">
+                <h3 class="task-title">ÉPICO: Visualização Gráfica da Solução</h3>
+                <p class="task-description">Criar uma representação visual clara do grafo, da rota otimizada e da animação do percurso, utilizando Matplotlib/NetworkX.</p>
+                <p class="task-details">Prioridade: Média</p>
+            </div>
+            <div class="task-card">
+                <h3 class="task-title">ÉPICO: Documentação e Apresentação</h3>
+                <p class="task-description">Preparar todos os entregáveis: apresentação oral, README, vídeo demonstrativo, e este Scrum Board.</p>
+                <p class="task-details">Prioridade: Média</p>
+            </div>
+            <div class="task-card">
+                <h3 class="task-title">PO: Modelar Restrição de Tempo Terrestre</h3>
+                <p class="task-description">Como PO, quero que o sistema identifique rotas que não excedam 200 anos terrestres, para garantir a viabilidade da missão para a humanidade.</p>
+                <p class="task-details">Prioridade: Alta</p>
+            </div>
+            
+        </div>
+
+        
+        <div class="scrum-column">
+            <h2 class="column-title">Sprint 1</h2>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                <h3 class="task-title">Definir Cenário "Missão Garrido"</h3>
+                <p class="task-description">Detalhar a narrativa, planetas, desafios (dilatação, portais) e o papel da tripulação (Matheus, Yago, Caio, João).</p>
+                <p class="task-assignee">Caio , Matheus</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                <h3 class="task-title">Pesquisa Dijkstra e Libs</h3>
+                <p class="task-description">Estudar a aplicação do Dijkstra e selecionar bibliotecas Python (NetworkX, Matplotlib).</p>
+                <p class="task-assignee">Matheus , Caio</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                <h3 class="task-title">Grafo Base e Repositório</h3>
+                <p class="task-description">Criar a estrutura inicial do grafo com locais e rotas. Configurar GitHub.</p>
+                <p class="task-assignee">Yago(PO), Matheus</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                <h3 class="task-title">Planejamento Sprint 1</h3>
+                <p class="task-description">Definir metas e tarefas para a Sprint 1. Criar Product Backlog inicial.</p>
+                <p class="task-assignee">PO e Equipe</p>
+            </div>
+        </div>
+
+        
+        <div class="scrum-column">
+            <h2 class="column-title">Sprint 2</h2>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                <h3 class="task-title">Implementar Dijkstra (Tempo Nave)</h3>
+                <p class="task-description">Codificar o algoritmo de Dijkstra para otimizar o tempo de nave.</p>
+                <p class="task-assignee">Matheus , Caio</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                <h3 class="task-title">Modelar Dilatação Temporal</h3>
+                <p class="task-description">Implementar a lógica para calcular o tempo terrestre decorrido com base nos fatores de dilatação.</p>
+                <p class="task-assignee">Caio  , Matheus</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                <h3 class="task-title">Função Rota com Restrição (200a)</h3>
+                <p class="task-description">Desenvolver a função para encontrar rotas que respeitem o limite de 200 anos terrestres e visitem os planetas na ordem correta.</p>
+                <p class="task-assignee">Matheus</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                <h3 class="task-title">Protótipo Visualização Grafo</h3>
+                <p class="task-description">Criar a primeira versão da visualização estática do grafo e da rota.</p>
+                <p class="task-assignee">Caio</p>
+            </div>
+        </div>
+
+       
+        <div class="scrum-column">
+            <h2 class="column-title">Sprint 3</h2>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                <h3 class="task-title">Refinar Visualização e Animação</h3>
+                <p class="task-description">Melhorar a estética do grafo e implementar a animação da rota otimizada.</p>
+                <p class="task-assignee">Caio</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                <h3 class="task-title">Criar Site/Apresentação Interativa</h3>
+                <p class="task-description">Desenvolver a apresentação HTML interativa do projeto (estilo Viewspace).</p>
+                <p class="task-assignee">Matheus</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                <h3 class="task-title">Documentação (README) e Testes</h3>
+                <p class="task-description">Escrever o README no GitHub, realizar testes finais da aplicação.</p>
+                <p class="task-assignee">Yago(PO)</p>
+            </div>
+            <div class="task-card">
+                <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                <h3 class="task-title">Gravar Vídeo Demonstrativo</h3>
+                <p class="task-description">Produzir o vídeo mostrando a execução do algoritmo e a visualização.</p>
+                <p class="task-assignee">Equipe</p>
+            </div>
+        </div>
+
+        
+        <div class="scrum-column" id="completed-column">
+            <h2 class="column-title">Concluído</h2>
+
+            
+            <div class="completed-tasks-container">
+                
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-epic">Épico</span>
+                    <h3 class="task-title">Definição Completa do Cenário Missão Garrido</h3>
+                    <p class="task-description">Criação e detalhamento do cenário fictício realista, coerente e desafiador para a aplicação do Algoritmo de Dijkstra, incluindo os desafios da exploração espacial e dilatação temporal.</p>
+                    <p class="task-assignee">Equipe</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-epic">Épico</span>
+                    <h3 class="task-title">Implementação do Algoritmo de Dijkstra Otimizado</h3>
+                    <p class="task-description">Desenvolvimento da solução em Python para encontrar o caminho mais eficiente, tratando os dados do grafo (planetas, rotas, pesos, fatores de dilatação) com foco no tempo terrestre.</p>
+                    <p class="task-assignee">Equipe</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-epic">Épico</span>
+                    <h3 class="task-title">Visualização Gráfica da Solução com Animação</h3>
+                    <p class="task-description">Criação de uma representação visual clara e animada do grafo e da rota mais curta, utilizando NetworkX e Matplotlib.</p>
+                    <p class="task-assignee">Equipe</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-epic">Épico</span>
+                    <h3 class="task-title">Documentação Completa e Apresentação do Projeto</h3>
+                    <p class="task-description">Preparação e finalização de todos os entregáveis: apresentação oral, README no GitHub, vídeo demonstrativo e este Scrum Board finalizado.</p>
+                    <p class="task-assignee">Equipe</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-epic">US</span>
+                    <h3 class="task-title">Modelagem da Restrição de Tempo Terrestre (200 anos)</h3>
+                    <p class="task-description">O sistema foi implementado para identificar e validar rotas que não excedam 200 anos terrestres, garantindo a viabilidade temporal da missão para a humanidade.</p>
+                    <p class="task-assignee">Equipe</p>
+                </div>
+
+                
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                    <h3 class="task-title">Definir Cenário "Missão Garrido" (Detalhado)</h3>
+                    <p class="task-description">Narrativa, planetas, desafios (dilatação, portais) e o papel da tripulação definidos.</p>
+                    <p class="task-assignee">Caio , Matheus</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                    <h3 class="task-title">Pesquisa sobre Dijkstra e Bibliotecas Python</h3>
+                    <p class="task-description">Estudo aprofundado da aplicação do Dijkstra e seleção das bibliotecas NetworkX e Matplotlib.</p>
+                    <p class="task-assignee">Matheus, Caio </p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                    <h3 class="task-title">Criação do Grafo Base e Repositório GitHub</h3>
+                    <p class="task-description">Estrutura inicial do grafo com locais e rotas criada. Repositório no GitHub configurado e funcional.</p>
+                    <p class="task-assignee">Yago(PO), Matheus</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-1">Sprint 1</span>
+                    <h3 class="task-title">Planejamento e Backlog Inicial da Sprint 1</h3>
+                    <p class="task-description">Metas e tarefas da Sprint 1 definidas. Product Backlog inicial estabelecido.</p>
+                    <p class="task-assignee">Yago(PO)</p>
+                </div>
+
+                
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                    <h3 class="task-title">Implementação do Dijkstra (Otimização por Tempo de Nave)</h3>
+                    <p class="task-description">Codificação do algoritmo de Dijkstra para otimizar o tempo de navegação da tripulação.</p>
+                    <p class="task-assignee">Matheus, Caio </p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                    <h3 class="task-title">Modelagem da Dilatação Temporal e Cálculo de Tempo Terrestre</h3>
+                    <p class="task-description">Lógica implementada para calcular o tempo terrestre decorrido com base nos fatores de dilatação de cada nó/aresta.</p>
+                    <p class="task-assignee">Caio , Matheus</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                    <h3 class="task-title">Função de Rota com Restrição de 200 Anos Terrestres</h3>
+                    <p class="task-description">Desenvolvimento da função para encontrar rotas que respeitem o limite de 200 anos terrestres, garantindo a ordem correta de visitas.</p>
+                    <p class="task-assignee">Matheus</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-2">Sprint 2</span>
+                    <h3 class="task-title">Protótipo Inicial da Visualização do Grafo</h3>
+                    <p class="task-description">Criação da primeira versão estática da visualização do grafo e da rota.</p>
+                    <p class="task-assignee">Caio</p>
+                </div>
+
+                
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                    <h3 class="task-title">Refinamento da Visualização e Animação da Rota</h3>
+                    <p class="task-description">Melhoria da estética do grafo e implementação da animação visual da rota otimizada.</p>
+                    <p class="task-assignee">Caio </p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                    <h3 class="task-title">Criação da Apresentação HTML Interativa</h3>
+                    <p class="task-description">Desenvolvimento da apresentação HTML interativa do projeto (estilo Viewspace) para o storytelling.</p>
+                    <p class="task-assignee">Matheus</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                    <h3 class="task-title">Documentação no README do GitHub e Testes Finais</h3>
+                    <p class="task-description">Escrita do README completo no GitHub e realização de testes finais abrangentes na aplicação.</p>
+                    <p class="task-assignee">Yago(PO)</p>
+                </div>
+                <div class="task-card">
+                    <span class="task-sprint-tag sprint-3">Sprint 3</span>
+                    <h3 class="task-title">Gravação do Vídeo Demonstrativo da Missão</h3>
+                    <p class="task-description">Produção do vídeo demonstrando a execução do algoritmo, a visualização do grafo e a animação da rota.</p>
+                    <p class="task-assignee">Equipe</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

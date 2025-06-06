@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemesis Protocol: O Storytelling da Missão Garrido</title>
+    <meta name="description" content="A jornada completa da Missão Garrido: da crise na Terra à esperança em Edmunds, com otimização e agilidade.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[SUA_URL_DO_PROJETO_AQUI]/storytelling.html">
+    <meta property="og:title" content="Nemesis Protocol: O Storytelling da Missão Garrido">
+    <meta property="og:description" content="A jornada completa da Missão Garrido: da crise na Terra à esperança em Edmunds, com otimização e agilidade.">
+    <meta property="og:image" content="[URL_DA_IMAGEM_DE_PREVIEW_AQUI.jpg]"> 
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="[SUA_URL_DO_PROJETO_AQUI]/storytelling.html">
+    <meta property="twitter:title" content="Nemesis Protocol: O Storytelling da Missão Garrido">
+    <meta property="twitter:description" content="A jornada completa da Missão Garrido: da crise na Terra à esperança em Edmunds, com otimização e agilidade.">
+    <meta property="twitter:image" content="[URL_DA_IMAGEM_DE_PREVIEW_AQUI.jpg]">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-purple: #8B5CF6; 
+            --color-primary-purple-hover: #7C3AED; 
+            --color-background-deep: #000000;
+            --color-background-section: #0a0a0f; 
+            --color-text-main: #E5E7EB; 
+            --color-text-subtle: #9CA3AF; 
+            --color-text-title: #FFFFFF;
+            --color-highlight-cyan: #67E8F9; 
+        }
+
+        body {
+            background-color: var(--color-background-deep); 
+            color: var(--color-text-main);
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.7;
+            margin: 0; 
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(papel-de-parede-abstrato-ultra-detalhado-da-nebulosa-4.jpg); 
+            background-size: cover; 
+            background-position: center center;
+            background-attachment: fixed;
+            opacity: 0.3; 
+            z-index: -2; 
+            pointer-events: none; 
+        }
+
+        .section {
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px; 
+            position: relative; 
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, transform;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1); 
+        }
+
+        .section:last-of-type {
+            border-bottom: none; 
+        }
+
+        .section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-background, .section-overlay {
+            display: none; 
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px; 
+            position: relative; 
+            z-index: 1;
+        }
+
+        .section-supertitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem; 
+            font-weight: 500;
+            color: var(--color-primary-purple); 
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px; 
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); 
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            color: var(--color-text-title);
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.7); 
+            margin-bottom: 20px; 
+            transform: translateY(-20px); 
+            opacity: 0;
+            transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s; 
+        }
+
+        .section.is-visible .section-title {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .section-subtitle { 
+            font-size: 1.5rem; 
+            font-weight: 300;
+            color: var(--color-text-main); 
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px; 
+            line-height: 1.6;
+        }
+        
+        .content-box {
+            background-color: rgba(25, 15, 40, 0.85); 
+            padding: 30px; 
+            border-radius: 16px; 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(139, 92, 246, 0.3); 
+            max-width: 800px; 
+            width: 90%;
+            position: relative; 
+            z-index: 1;
+            font-size: 1.05rem; 
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.15); 
+        }
+        .content-box p, .content-box ul {
+            margin-bottom: 0.8rem; 
+        }
+        .content-box strong {
+            color: var(--color-primary-purple); 
+            font-weight: 600;
+        }
+        .content-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .content-box ul li {
+            padding-left: 1.5em;
+            position: relative;
+            margin-bottom: 0.6em; 
+        }
+        .content-box ul li::before {
+            content: '✦'; 
+            color: var(--color-primary-purple); 
+            position: absolute;
+            left: 0;
+            font-size: 0.9em;
+            line-height: 1.7; 
+        }
+        
+        .cta-button {
+            display: inline-block;
+            margin-top: 40px; 
+            padding: 15px 40px; 
+            background-color: var(--color-primary-purple); 
+            color: var(--color-text-title); 
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            border-radius: 12px; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5); 
+            text-transform: uppercase;
+            letter-spacing: 0.1em; 
+            border: 2px solid var(--color-primary-purple); 
+            background: linear-gradient(45deg, var(--color-primary-purple), var(--color-primary-purple-hover)); 
+        }
+        .cta-button:hover {
+            background-color: var(--color-primary-purple-hover); 
+            transform: translateY(-5px) scale(1.05); 
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.7); 
+            border-color: var(--color-highlight-cyan); 
+        }
+        
+        .image-placeholder { 
+            width: 100%;
+            max-width: 550px; 
+            height: 250px; 
+            background-color: rgba(40,40,60,0.3); 
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto; 
+            color: var(--color-text-subtle);
+            font-style: italic;
+            font-size: 0.9rem;
+            text-align: center;
+            overflow: hidden; 
+            position: relative; 
+            border: 1px dashed var(--color-primary-purple); 
+            cursor: pointer; 
+        }
+        .image-placeholder img { 
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            
+        }
+        .image-placeholder.text-only { 
+            border: 1px dashed var(--color-primary-purple);
+            padding: 10px;
+            background-color: rgba(40,40,60,0.5);
+        }
+        
+        .scroll-indicator {
+            display: none; 
+        }
+
+        .logo-placeholder { 
+            display: none; 
+        }
+
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2); 
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--color-text-title);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-logo-icon {
+            font-size: 1.5rem;
+            color: var(--color-primary-purple);
+        }
+
+        .nav-links a {
+            font-family: 'Exo 2', sans-serif;
+            color: var(--color-text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary-purple);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary-purple);
+            text-shadow: 0 0 8px rgba(139, 92, 246, 0.7);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-text {
+            position: relative; 
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin-top: 50px;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            z-index: 9999;
+            flex-direction: column;
+            transition: opacity 0.5s ease-out;
+        }
+        #loading-overlay p {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #9CA3AF;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #8B5CF6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; 
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+        }
+
+        #fullscreen-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #fullscreen-overlay img.fullscreen-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain; 
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); 
+        }
+
+        #fullscreen-overlay .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            transition: color 0.2s ease, transform 0.2s ease;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        #fullscreen-overlay .close-button:hover {
+            color: var(--color-primary-purple);
+            transform: scale(1.1);
+        }
+
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 15px; 
+            }
+            .section-title { font-size: 2.8rem; } 
+            .section-subtitle { font-size: 1.2rem; } 
+            .content-box { padding: 20px; font-size: 1rem; width: 95%;}
+            .cta-button { padding: 12px 30px; font-size: 1rem; }
+            .image-placeholder { height: 180px; }
+            .image-placeholder.clickable-link .link-content {
+                font-size: 0.9rem;
+            }
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: center;
+            }
+            .nav-links a {
+                margin: 0.5rem 1rem;
+            }
+            #fullscreen-overlay .close-button {
+                font-size: 2rem;
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title { font-size: 2.2rem; }
+            .section-subtitle { font-size: 1.1rem; }
+            .content-box { padding: 15px; font-size: 0.95rem; }
+            .cta-button { padding: 10px 25px; font-size: 0.9rem; }
+            .image-placeholder { height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Carregando Missão Garrido...</p>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <span class="nav-logo-icon">🌌</span> NEMESIS
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="problema.html">O Desafio</a>
+            <a href="storytelling-crise.html">Storytelling</a> 
+            <a href="equipe-scrum.html">A Equipe</a>
+            
+        </div>
+    </nav>
+
+    <main>
+        
+        <section class="section" id="terra-agonia">
+            <div class="section-header">
+                <p class="section-supertitle">Cenário de Crise</p>
+                <h2 class="section-title">A Terra em Agonia</h2>
+            </div>
+            <div class="content-box">
+                <p>Imaginem um futuro não muito distante. A Terra, nosso lar, clama por socorro. Décadas de exploração desenfreada dos recursos naturais, somadas à poluição implacável, levaram nosso planeta a um ponto de desequilíbrio irreversível. A humanidade, desesperada, olha para as estrelas em busca de uma segunda chance, um novo lar antes que seja tarde demais.</p>
+                <div class="image-placeholder my-6">
+                    <img src="ChatGPT Image 6 de jun. de 2025, 01_51_55.png" alt="Imagem da Terra em agonia com poluição e exploração." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="lazaro-prime">
+            <div class="section-header">
+                <p class="section-supertitle">A Centelha de Esperança</p>
+                <h2 class="section-title">Projeto Lázaro Prime e os Mundos Desiludidores</h2>
+            </div>
+            <div class="content-box">
+                <p>Foi nesse cenário de urgência que nasceu o 'Projeto Lázaro Prime'. Um programa audacioso que enviou sondas não tripuladas através do recém-descoberto Portal Estelar perto de Saturno. Por décadas, a comunicação foi esporádica e os dados, muitas vezes, desanimadores. Planetas como o 'Planeta Miller', com sua órbita traiçoeira e dilatação temporal extrema, e o 'Planeta Mann', um mundo gelado e inóspito, enviaram relatórios que, embora cientificamente valiosos, não ofereciam esperança de colonização imediata.</p>
+                <div class="image-placeholder my-6">
+                    <img src="587343.jpg" alt="Imagem de uma sonda espacial passando por um portal estelar perto de Saturno." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="planeta-edmunds">
+            <div class="section-header">
+                <p class="section-supertitle">O Sinal Vital</p>
+                <h2 class="section-title">O Triunfo do Planeta Edmunds</h2>
+            </div>
+            <div class="content-box">
+                <p>No entanto, em meio a essa desilusão, uma das últimas sondas a reportar, a 'Lázaro-12', transmitiu um conjunto de dados surpreendentemente promissor. De um planeta distante, orbitando uma estrela no sistema de Gargantua: o 'Planeta Edmunds'. Mais crucialmente, a Lázaro-12 conseguiu transmitir um 'ping' de confirmação de seu pouso bem-sucedido e leituras ambientais estáveis por um período significativo antes de silenciar – um feito que nenhuma outra sonda em um planeta potencialmente habitável havia conseguido. Era a prova de conceito. Nossa última chance.</p>
+                <div class="image-placeholder my-6">
+                    <img src="ChatGPT Image 6 de jun. de 2025, 01_47_38.png" alt="Imagem de um planeta exuberante e habitável, simbolizando o Planeta Edmunds." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="corrida-tempo">
+            <div class="section-header">
+                <p class="section-supertitle">A Missão Garrido</p>
+                <h2 class="section-title">Uma Corrida Contra o Tempo</h2>
+            </div>
+            <div class="content-box">
+                <p>Essa transmissão, embora breve, acendeu uma chama de esperança. Com esta 'prova de conceito' de habitabilidade, a 'Missão Garrido' foi concebida. Não é uma exploração cega, mas uma corrida contra o tempo para alcançar este sinal de esperança, confirmar e estabelecer uma presença em Edmunds. O desafio é imenso: precisamos encontrar a rota mais eficiente, otimizando o tempo terrestre, e tudo isso dentro de uma restrição crítica de 200 anos terrestres para que a missão tenha impacto na geração atual antes que a situação na Terra se torne irreversível. Edmunds é o farol.</p>
+                <div class="image-placeholder my-6">
+                    <img src="25726-3840x2160-desktop-4k-spaceship-wallpaper-image.jpg" alt="Imagem de uma nave espacial em velocidade de dobra ou warp, simbolizando a urgência." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="section" id="algoritmo-dijkstra">
+            <div class="section-header">
+                <p class="section-supertitle">A Solução</p>
+                <h2 class="section-title">O Algoritmo de Dijkstra</h2>
+            </div>
+            <div class="content-box">
+                <p>Como especialistas em problemas computacionais complexos, sabíamos que a chave para a Missão Garrido estava em um algoritmo clássico: o Algoritmo de Dijkstra. Nosso sistema planetário foi modelado como um grafo, onde cada planeta é um nó e as rotas são arestas, ponderadas pelo tempo de nave e, crucialmente, pela dilatação temporal em relação à Terra.</p>
+                <div class="image-placeholder my-6">
+                    <img src="Captura de tela 2025-06-05 212905.png" alt="Diagrama abstrato de um grafo sendo processado, representando o Algoritmo de Dijkstra." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="visualizacao-grafo">
+            <div class="section-header">
+                <p class="section-supertitle">Mapeando o Cosmos</p>
+                <h2 class="section-title">Visualização do Grafo</h2>
+            </div>
+            <div class="content-box">
+                <p>Desenvolvemos uma visualização em Python que nos permite mapear o sistema interestelar. Cada nó representa um local – da Terra ao Buraco de Minhoca perto de Saturno, passando pelos perigosos Planetas Miller e Mann, até o nosso objetivo, o Planeta Edmunds. As cores dos nós indicam sua importância: verde para o objetivo, azul para a partida, roxo para pontos chave, e amarelo/vermelho para áreas de risco ou críticas.</p>
+                <div class="image-placeholder my-6">
+                    <img src="Captura de tela 2025-06-05 213015.png" alt="Imagem de um mapa estelar com nós e arestas coloridos, representando planetas e rotas." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="demonstracao-animada">
+            <div class="section-header">
+                <p class="section-supertitle">A Rota Essencial</p>
+                <h2 class="section-title">Demonstração Animada</h2>
+            </div>
+            <div class="content-box">
+                <p>Aplicando Dijkstra, otimizamos a rota não apenas pelo tempo de nave da tripulação, mas pelo tempo decorrido na Terra. Nossa simulação animada revela a sequência de locais que minimiza o impacto temporal aqui. Vejam como o caminho se revela, conectando a Terra a Edmunds, passando por pontos estratégicos.</p>
+                
+                
+                <div class="media-container" style="width: 100%; max-width: 700px; margin: 20px auto; border-radius: 10px; overflow: hidden; border: 1px solid var(--color-primary-purple);">
+                    <video controls playsinline loading="lazy" style="width:100%; height:auto; display:block; object-fit:cover; border-radius: 10px;"
+                           onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'padding: 20px; text-align: center; color: var(--color-text-subtle); background-color: rgba(40,40,60,0.3); border-radius: 10px;\'>Vídeo da demonstração não carregou. Por favor, verifique o caminho do arquivo.<br><br><strong>Caminho Esperado:</strong> <code>./video_demo_grafo.mp4</code><br><br>Você também pode adicionar uma imagem de fallback aqui.</div>'; this.parentElement.style.height='250px'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center';">
+                        <source src="Gravando 2025-06-06 020949.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+                
+                
+
+            </div>
+        </section>
+
+        <section class="section" id="tempo-esperanca">
+            <div class="section-header">
+                <p class="section-supertitle">Os Resultados</p>
+                <h2 class="section-title">Tempo e Esperança</h2>
+            </div>
+            <div class="content-box">
+                <p>Encontramos a rota! Com ela, a tripulação da Missão Garrido enfrentará um tempo de nave de <strong>5 anos</strong>. Mas o mais importante: o tempo total decorrido na Terra para esta rota será de <strong>7 anos</strong>. Isso significa que a restrição de 200 anos foi <strong>Atendida</strong>. Uma notícia que pode definir o destino da humanidade.</p>
+                <div class="image-placeholder my-6">
+                    <img src="Captura de tela 2025-06-06 021812.png" alt="Imagem de um gráfico ou visualização de dados mostrando tempos otimizados, simbolizando sucesso." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="section" id="mensagem-final">
+            <div class="section-header">
+                <p class="section-supertitle">Conclusão</p>
+                <h2 class="section-title">A Mensagem Final</h2>
+            </div>
+            <div class="content-box">
+                <p>A Missão Garrido é mais do que uma jornada espacial; é um símbolo da resiliência humana. Com a engenhosidade da computação e a força da colaboração, nós do Nemesis Protocol esperamos abrir caminho para um novo capítulo na história da humanidade. O futuro nos aguarda, e estamos prontos para desvendar cada rota.</p>
+                <div class="image-placeholder my-6">
+                    <img src="ChatGPT Image 6 de jun. de 2025, 02_23_42.png" alt="Imagem de um horizonte promissor com um novo planeta à vista, simbolizando esperança." loading="lazy" style="object-fit: cover; width: 100%; height: 100%; border-radius: 8px;">
+                    
+                </div>
+                <a href="equipe-scrum.html" class="cta-button">Ver a Equipe e o Processo</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-text">
+        <p>&copy; 2025 Nemesis Protocol. Todos os direitos reservados. Projeto Missão Garrido.</p>
+    </footer>
+
+    <div id="fullscreen-overlay">
+        <button class="close-button">&times;</button>
+        <img class="fullscreen-image" src="" alt="Imagem em tela cheia">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+            const fullscreenImage = fullscreenOverlay.querySelector('.fullscreen-image');
+            const closeButton = fullscreenOverlay.querySelector('.close-button');
+
+            const options = { root: null, rootMargin: '0px', threshold: 0.20 }; 
+
+            const callback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(callback, options);
+            sections.forEach(section => { observer.observe(section); });
+            
+            let imagesLoadedCount = 0;
+            const imagesToLoad = document.querySelectorAll('img[src], video source');
+            const totalImagesToLoad = imagesToLoad.length;
+
+            if (totalImagesToLoad === 0) {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+            } else {
+                imagesToLoad.forEach(asset => {
+                    const tempImg = new Image();
+                    tempImg.src = asset.src;
+                    tempImg.onload = tempImg.onerror = () => {
+                        imagesLoadedCount++;
+                        if (imagesLoadedCount === totalImagesToLoad) {
+                            loadingOverlay.style.opacity = '0';
+                            setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+                        }
+                    };
+                });
+            }
+
+            
+            const contentBoxImages = document.querySelectorAll('.content-box .image-placeholder img');
+
+            contentBoxImages.forEach(img => {
+                img.style.cursor = 'pointer'; 
+                img.addEventListener('click', () => {
+                    fullscreenImage.src = img.src;
+                    fullscreenImage.alt = img.alt;
+                    fullscreenOverlay.classList.add('active');
+                });
+            });
+
+            closeButton.addEventListener('click', () => {
+                fullscreenOverlay.classList.remove('active');
+            });
+
+            fullscreenOverlay.addEventListener('click', (event) => {
+                
+                if (event.target === fullscreenOverlay) {
+                    fullscreenOverlay.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && fullscreenOverlay.classList.contains('active')) {
+                    fullscreenOverlay.classList.remove('active');
+                }
+            });
+            
+        });
+    </script>
+</body>
+</html>
